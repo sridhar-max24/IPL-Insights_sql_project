@@ -114,3 +114,11 @@ Here are some of the key SQL queries used to analyze the data:
      GROUP BY batter
     ORDER BY total_runs DESC LIMIT 5;
      ```
+
+     SELECT batter, SUM(batsman_runs) AS total_runs
+FROM deliveries
+WHERE over <= 10
+GROUP BY batter
+ORDER BY total_runs DESC 
+LIMIT 5;
+
