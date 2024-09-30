@@ -24,14 +24,14 @@ Here are some of the key SQL queries used to analyze the data:
 ## Total Matches Played ?
    ```sql
    SELECT COUNT(*) AS total_matches FROM matches;
- 
+   ```
 ## How many matches did each team win?
      ```sql
      SELECT winner, 
      COUNT(*) AS matches_won
      FROM matches
      GROUP BY winner;
-     
+     ```
 ## Who won the Player of the Match award the most times?
      ```sql
      SELECT player_of_match,
