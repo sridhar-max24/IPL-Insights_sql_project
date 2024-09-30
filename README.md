@@ -21,18 +21,18 @@ You can access the dataset (https://www.kaggle.com/datasets/patrickb1912/ipl-com
 ### SQL Queries
 Here are some of the key SQL queries used to analyze the data:
 
- **Total Matches Played ?**
+## Total Matches Played ?
    ```sql
    SELECT COUNT(*) AS total_matches FROM matches;
    ```   
-**How many matches did each team win?**
+## How many matches did each team win?
      ```sql
      SELECT winner, 
      COUNT(*) AS matches_won
      FROM matches
      GROUP BY winner;
      ```
-**Who won the Player of the Match award the most times?**
+## Who won the Player of the Match award the most times?
      ```sql
      SELECT player_of_match,
      COUNT(*) AS awards_count
@@ -40,7 +40,7 @@ Here are some of the key SQL queries used to analyze the data:
      GROUP BY player_of_match
      ORDER BY awards_count DESC LIMIT 1;
      ```
-**What is the average total runs scored per match for each season?**
+## What is the average total runs scored per match for each season?
      ```sql
      SELECT m.season,
      AVG(match_runs.total_runs) AS average_runs
@@ -51,7 +51,7 @@ Here are some of the key SQL queries used to analyze the data:
      GROUP BY m.season
      ORDER BY m.season;
      ```
-**Which team scored the most runs in a single match?**
+## Which team scored the most runs in a single match?
      ```sql
      SELECT batting_team,
      MAX(total_runs) AS highest_score
@@ -66,30 +66,30 @@ Here are some of the key SQL queries used to analyze the data:
      FROM deliveries WHERE is_wicket = 1 
      GROUP BY dismissal_kind ORDER BY frequency DESC;
      ```
-**What is the total number of runs scored by each player?**
+## What is the total number of runs scored by each player?
      ```sql
      SELECT batter, SUM(batsman_runs) AS total_runs
      FROM deliveries
      GROUP BY batter ORDER BY total_runs DESC;
      ```
-**How many matches ended with no result?**
+## How many matches ended with no result?
      ```sql
      SELECT COUNT(*) AS no_result_matches 
      FROM matches 
      WHERE result = 'no result';
      ```
- **Compare average runs scored in the first 6 overs vs. the last 6 overs ?**
+ ## Compare average runs scored in the first 6 overs vs. the last 6 overs ?
      ```sql
      SELECT AVG(CASE WHEN over <= 6 THEN batsman_runs ELSE 0 END) AS 
      average_powerplay_runs, AVG
      ```
- **How many matches were won by teams based on wickets?**
+ ## How many matches were won by teams based on wickets?
      ```sql
      SELECT COUNT(*) AS matches_won_by_wickets
      FROM matches
      WHERE result = 'wickets';
      ```
- **Which team had the best win record in each season (most wins)?**
+ ## Which team had the best win record in each season (most wins)?
      ```sql
      SELECT season, winner, COUNT(*) AS wins
      FROM matches
@@ -104,9 +104,8 @@ Here are some of the key SQL queries used to analyze the data:
 )
     FROM matches m
     ORDER BY season;
-     ```
- 
- **Compare the top 5 players with the highest runs scored in the first half of matches (first 10 overs)**
+    ```
+## Compare the top 5 players with the highest runs scored in the first half of matches (first 10 overs)
      ```sql
      SELECT batter, SUM(batsman_runs) AS total_runs
      FROM deliveries
