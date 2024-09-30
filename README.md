@@ -38,7 +38,8 @@ Here are some of the key SQL queries used to analyze the data:
      COUNT(*) AS awards_count
      FROM matches
      GROUP BY player_of_match
-     ORDER BY awards_count DESC LIMIT 1;```
+     ORDER BY awards_count DESC LIMIT 1;
+     ```
      
 ## What is the average total runs scored per match for each season?
      ```sql
