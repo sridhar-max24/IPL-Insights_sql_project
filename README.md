@@ -38,7 +38,7 @@ Here are some of the key SQL queries used to analyze the data:
      COUNT(*) AS awards_count
      FROM matches
      GROUP BY player_of_match
-     ORDER BY awards_count DESC LIMIT 1;
+     ORDER BY awards_count DESC LIMIT 1;```
      
 ## What is the average total runs scored per match for each season?
      ```sql
@@ -49,7 +49,7 @@ Here are some of the key SQL queries used to analyze the data:
      deliveries GROUP BY match_id) AS match_runs
      ON m.id = match_runs.match_id
      GROUP BY m.season
-     ORDER BY m.season;
+     ORDER BY m.season;```
      
 ## Which team scored the most runs in a single match?
      ```sql
@@ -58,46 +58,46 @@ Here are some of the key SQL queries used to analyze the data:
      FROM (SELECT match_id, SUM(batsman_runs) AS total_runs, 
      batting_team FROM deliveries 
      GROUP BY match_id, batting_team) AS match_totals
-     GROUP BY batting_team ORDER BY highest_score DESC LIMIT 1;
+     GROUP BY batting_team ORDER BY highest_score DESC LIMIT 1;```
      
 ## How many times has each type of dismissal occurred?
      ```sql
      SELECT dismissal_kind, COUNT(*) AS frequency
      FROM deliveries WHERE is_wicket = 1 
-     GROUP BY dismissal_kind ORDER BY frequency DESC;
+     GROUP BY dismissal_kind ORDER BY frequency DESC;```
    
 ## What is the total number of runs scored by each player?
      ```sql
      SELECT batter, SUM(batsman_runs) AS total_runs
      FROM deliveries
-     GROUP BY batter ORDER BY total_runs DESC;
+     GROUP BY batter ORDER BY total_runs DESC;```
      
 ## How many matches ended with no result?
      ```sql
      SELECT COUNT(*) AS no_result_matches 
      FROM matches 
-     WHERE result = 'no result';
+     WHERE result = 'no result';```
      
  ## Compare average runs scored in the first 6 overs vs. the last 6 overs ?
      ```sql
      SELECT AVG(CASE WHEN over <= 6 THEN batsman_runs ELSE 0 END) AS 
-     average_powerplay_runs, AVG
+     average_powerplay_runs, AVG;```
      
  ## How many matches were won by teams based on wickets?
      ```sql
      SELECT COUNT(*) AS matches_won_by_wickets
      FROM matches
-     WHERE result = 'wickets';
+     WHERE result = 'wickets';```
      
  ## Which team had the best win record in each season (most wins)?
      ```sql
      SELECT season, winner, COUNT(*) AS wins
      FROM matches
-    GROUP BY season, winner
-    HAVING COUNT(*) = (SELECT MAX(wins) 
-    FROM ( SELECT winner, COUNT(*) AS wins FROM matches
-        WHERE season = m.season GROUP BY winner ) AS season_wins)
-        FROM matches m ORDER BY season;
+     GROUP BY season, winner
+     HAVING COUNT(*) = (SELECT MAX(wins) 
+     FROM ( SELECT winner, COUNT(*) AS wins FROM matches
+     WHERE season = m.season GROUP BY winner ) AS season_wins)
+     FROM matches m ORDER BY season;```
    
 ## Compare the top 5 players with the highest runs scored in the first half of matches (first 10 overs)
      ```sql
@@ -105,6 +105,6 @@ Here are some of the key SQL queries used to analyze the data:
      FROM deliveries
      WHERE over <= 10
      GROUP BY batter
-    ORDER BY total_runs DESC LIMIT 5;
+    ORDER BY total_runs DESC LIMIT 5;```
    
 
