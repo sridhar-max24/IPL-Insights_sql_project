@@ -4,10 +4,10 @@
 ### Overview
 IPL Insights is a comprehensive database project that captures the rich history of the Indian Premier League (IPL) from its inception in 2008 to 2024. This project aims to provide in-depth analysis and insights into match statistics, player performances, and team dynamics throughout the seasons.
 
-## Objective
+### Objective
 To analyze IPL data to derive insights on team performances, player statistics, and match outcomes, enabling data-driven decision-making for fans and analysts.
 
-## Dataset
+### Dataset
 The dataset consists of two key tables:
 **Matches**: Contains details about each match.
 **Deliveries**: Captures detailed information for each delivery bowled in the matches.
