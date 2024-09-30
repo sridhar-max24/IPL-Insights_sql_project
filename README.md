@@ -14,7 +14,7 @@ The dataset consists of two key tables:
  - **Deliveries**: Captures detailed information for each delivery bowled in the matches.
 
 ### Dataset Link
-You can access the dataset (https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
+dataset link: (https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
 
 ## Problems and Solutions
 
