@@ -9,8 +9,9 @@ To analyze IPL data to derive insights on team performances, player statistics, 
 
 ### Dataset
 The dataset consists of two key tables:
--**Matches**: Contains details about each match.
--**Deliveries**: Captures detailed information for each delivery bowled in the matches.
+
+ - **Matches**: Contains details about each match.
+ - **Deliveries**: Captures detailed information for each delivery bowled in the matches.
 
 ### Dataset Link
 You can access the dataset (https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
