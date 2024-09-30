@@ -95,15 +95,9 @@ Here are some of the key SQL queries used to analyze the data:
      FROM matches
     GROUP BY season, winner
     HAVING COUNT(*) = (SELECT MAX(wins) 
-    FROM (
-        SELECT winner, COUNT(*) AS wins
-        FROM matches
-        WHERE season = m.season
-        GROUP BY winner
-    ) AS season_wins
-)
-    FROM matches m
-    ORDER BY season;
+    FROM ( SELECT winner, COUNT(*) AS wins FROM matches
+        WHERE season = m.season GROUP BY winner ) AS season_wins)
+        FROM matches m ORDER BY season;
     ```
 ## Compare the top 5 players with the highest runs scored in the first half of matches (first 10 overs)
      ```sql
