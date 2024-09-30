@@ -60,7 +60,7 @@ Here are some of the key SQL queries used to analyze the data:
      GROUP BY match_id, batting_team) AS match_totals
      GROUP BY batting_team ORDER BY highest_score DESC LIMIT 1;
      
-**How many times has each type of dismissal occurred?**
+## How many times has each type of dismissal occurred?
      ```sql
      SELECT dismissal_kind, COUNT(*) AS frequency
      FROM deliveries WHERE is_wicket = 1 
