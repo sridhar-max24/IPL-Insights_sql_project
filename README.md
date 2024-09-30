@@ -15,3 +15,13 @@ The dataset consists of two key tables:
 
 ### Dataset Link
 You can access the dataset (https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
+
+## Problems and Solutions
+
+### SQL Queries
+Here are some of the key SQL queries used to analyze the data:
+
+1. **Total Matches Played**
+   ```sql
+   SELECT COUNT(*) AS total_matches FROM matches;
+   ```
